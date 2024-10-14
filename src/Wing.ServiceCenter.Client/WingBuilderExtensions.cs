@@ -11,11 +11,18 @@ namespace Wing
         public static IWingServiceBuilder AddServiceCenter(this IWingServiceBuilder wingBuilder)
         {
             wingBuilder.Services.AddSingleton<RegisterService>();
+            wingBuilder.Services.AddSingleton<ConfigService>();
             wingBuilder.Services.AddSingleton<IServiceViewProvider, ServiceViewProvider>(x =>
             {
                 var serviceViewProvider = new ServiceViewProvider(x.GetRequiredService<RegisterService>());
                 App.ServiceViewProvider = serviceViewProvider;
                 return serviceViewProvider;
+            });
+            wingBuilder.Services.AddSingleton<IConfigViewProvider, ConfigViewProvider>(x =>
+            {
+                var configViewProvider = new ConfigViewProvider(x.GetRequiredService<ConfigService>());
+                App.ConfigViewProvider = configViewProvider;
+                return configViewProvider;
             });
             return wingBuilder;
         }

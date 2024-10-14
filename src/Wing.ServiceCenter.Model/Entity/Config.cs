@@ -10,5 +10,7 @@ namespace Wing.ServiceCenter.Model
 
         [Column(StringLength = -1)]
         public string Value { get; set; }
+
+        public ulong Version { get; set; }
     }
 }

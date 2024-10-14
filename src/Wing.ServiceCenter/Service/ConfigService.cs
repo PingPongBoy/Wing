@@ -4,7 +4,7 @@ using Wing.Result;
 using Wing.ServiceCenter.Model;
 using Wing.ServiceProvider.Dto;
 
-namespace Wing.ServiceCenter.Client.Service
+namespace Wing.ServiceCenter.Service
 {
     public class ConfigService
     {

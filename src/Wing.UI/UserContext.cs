@@ -1,6 +1,4 @@
 ﻿using Wing.Persistence.User;
-using Wing.Result;
-using Wing.UI.Model;
 
 namespace Wing.UI
 {

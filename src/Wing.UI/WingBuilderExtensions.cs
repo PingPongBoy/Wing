@@ -13,6 +13,12 @@ namespace Wing
         public static IWingServiceBuilder AddWingUI(this IWingServiceBuilder wingBuilder, DataType dataType, string connectionString = "")
         {
             wingBuilder.AddPersistence(dataType, connectionString);
+            wingBuilder.AddWingUI();
+            return wingBuilder;
+        }
+
+        private static IWingServiceBuilder AddWingUI(this IWingServiceBuilder wingBuilder)
+        {
             wingBuilder.Services.AddControllers(options =>
             {
                 options.Filters.Add(typeof(ApiExceptionFilter));
