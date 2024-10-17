@@ -78,6 +78,7 @@ namespace Wing.Persistence.Saga
         /// <summary>
         /// 参数值
         /// </summary>
+        [Column(StringLength = -1)]
         public string ParamsValue { get; set; }
 
         [Column(StringLength = 1000)]
